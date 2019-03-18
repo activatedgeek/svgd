@@ -1,0 +1,13 @@
+name: stein
+channels:
+  - conda-forge
+dependencies:
+  - python=3.6
+  - pip
+  - ipykernel
+  - ipywidgets
+  - plotly=3.6.*
+  - tqdm=4.*
+  - numpy=1.*
+  - pip:
+    - torch>=1.0
