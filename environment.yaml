@@ -4,9 +4,7 @@ channels:
 dependencies:
   - python=3.6
   - pip
-  - ipykernel
-  - ipywidgets
-  - plotly=3.6.*
+  - altair=2.4.*
   - tqdm=4.*
   - numpy=1.*
   - pip:
