@@ -1,11 +1,11 @@
 name: stein
 channels:
   - conda-forge
+  - pytorch
 dependencies:
   - python=3.6
   - pip
   - altair=2.4.*
   - tqdm=4.*
   - numpy=1.*
-  - pip:
-    - torch>=1.0
+  - pytorch=1.*
