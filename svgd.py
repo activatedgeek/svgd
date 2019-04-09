@@ -12,14 +12,10 @@ class SVGD:
     X = X.detach().requires_grad_(True)
 
     log_prob = self.P.log_prob(X)
-    score_func = autograd.grad(log_prob, X,
-                               grad_outputs=torch.ones_like(log_prob),
-                               only_inputs=True)[0]
+    score_func = autograd.grad(log_prob.sum(), X)[0]
 
     K_XX = self.K(X, X.detach())
-    grad_K = -autograd.grad(K_XX, X,
-                            grad_outputs=torch.ones_like(K_XX),
-                            only_inputs=True)[0]
+    grad_K = -autograd.grad(K_XX.sum(), X)[0]
 
     phi = (K_XX.detach().matmul(score_func) + grad_K) / X.size(0)
 
